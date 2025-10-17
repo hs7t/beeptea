@@ -63,3 +63,19 @@ export const decodeCharacter = (char: string) => {
     return Object.keys(CHARACTER_IMC).find(key => CHARACTER_IMC[key as keyof typeof CHARACTER_IMC] === char) || "";
 }
 
+export const encodeString = (str: string) => {
+    let result = ""
+    for (let char of str) {
+        result += (encodeCharacter(char) + " ")
+    }
+    return result
+}
+
+export const decodeString = (str: string) => {
+    const signals = str.split(" ")
+    let result = ""
+    for (let signal of signals) {
+        result += decodeCharacter(signal)
+    }
+    return result
+}
