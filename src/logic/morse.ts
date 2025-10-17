@@ -58,3 +58,7 @@ const CHARACTER_IMC = {
 export const encodeCharacter = (crct: string) => {
     return CHARACTER_IMC[crct.toUpperCase() as keyof typeof CHARACTER_IMC] || ""
 }
+
+export const decodeCharacter = (crct: string) => {
+    return Object.keys(CHARACTER_IMC).find(key => CHARACTER_IMC[key as keyof typeof CHARACTER_IMC] === crct) || "";
+}
