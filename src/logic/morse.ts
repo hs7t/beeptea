@@ -65,9 +65,15 @@ export const decodeCharacter = (char: string) => {
 
 export const encodeString = (str: string) => {
     let result = ""
+
     for (let char of str) {
-        result += (encodeCharacter(char) + " ")
+        if (char === " " && result.length != 0 && result[-1] != char) {
+            result += "/ "
+        } else {
+            result += (encodeCharacter(char) + " ")
+        }
     }
+
     return result
 }
 
