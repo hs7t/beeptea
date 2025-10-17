@@ -54,3 +54,7 @@ const CHARACTER_IMC = {
     "$": "...-..-",
     "@": ".--.-."
 };
+
+export const encodeCharacter = (crct: string) => {
+    return CHARACTER_IMC[crct.toUpperCase() as keyof typeof CHARACTER_IMC] || ""
+}
