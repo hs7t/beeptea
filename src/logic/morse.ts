@@ -81,7 +81,11 @@ export const decodeString = (str: string) => {
     const signals = str.split(" ")
     let result = ""
     for (let signal of signals) {
-        result += decodeCharacter(signal)
+        if (signal == "/") {
+            result += " "
+        } else {
+            result += decodeCharacter(signal)
+        }
     }
     return result
 }
