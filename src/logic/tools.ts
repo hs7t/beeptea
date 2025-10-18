@@ -19,3 +19,7 @@ export class Range {
     return rangeArray;
   }
 }
+
+export const wait = (milliseconds: number) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
