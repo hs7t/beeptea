@@ -8,7 +8,7 @@ class Range {
   }
 
   size(): number {
-    return this.start - this.end;
+    return this.end - this.start;
   }
 
   all(): Array<number> {
