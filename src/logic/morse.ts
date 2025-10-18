@@ -73,8 +73,8 @@ export const encodeString = (str: string) => {
     let result = ""
 
     for (let char of str) {
-        if (char === " " && result.length != 0 && result.trim()[-1] != char) {
-            result += ("/" + " ")
+        if (char === " " && result.length != 0 && result.trim().slice(-1) != SPECIAL.wordBreak) {
+            result += (SPECIAL.wordBreak + " ")
         } else {
             result += (encodeCharacter(char) + " ")
         }
