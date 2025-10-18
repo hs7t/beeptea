@@ -1,4 +1,4 @@
-const CHARACTER_IMC = {
+const CODEMAP = {
     "A": ".-",
     "B": "-...",
     "C": "-.-.",
@@ -62,11 +62,11 @@ const SPECIAL = {
 }
 
 export const encodeCharacter = (char: string) => {
-    return CHARACTER_IMC[char.toUpperCase() as keyof typeof CHARACTER_IMC] || ""
+    return CODEMAP[char.toUpperCase() as keyof typeof CODEMAP] || ""
 }
 
 export const decodeCharacter = (char: string) => {
-    return Object.keys(CHARACTER_IMC).find(key => CHARACTER_IMC[key as keyof typeof CHARACTER_IMC] === char) || "";
+    return Object.keys(CODEMAP).find(key => CODEMAP[key as keyof typeof CODEMAP] === char) || "";
 }
 
 export const encodeString = (str: string) => {
