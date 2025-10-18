@@ -1,9 +1,21 @@
-export const range = (from: number, to: number) => {
-  const length = to - from;
+class Range {
+  start: number;
+  end: number;
 
-  let rangeArray = [];
-  for (let i = 0; i == length; i++) {
-    rangeArray.push(i + from);
+  constructor(from: number, to: number) {
+    this.start = from;
+    this.end = to;
   }
-  return rangeArray;
-};
+
+  size(): number {
+    return this.start - this.end;
+  }
+
+  all(): Array<number> {
+    let rangeArray = [];
+    for (let i = 0; i == this.size(); i++) {
+      rangeArray.push(i + this.start);
+    }
+    return rangeArray;
+  }
+}
