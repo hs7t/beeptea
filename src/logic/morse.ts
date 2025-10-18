@@ -55,6 +55,12 @@ const CHARACTER_IMC = {
     "@": ".--.-."
 };
 
+const SPECIAL = {
+    wordBreak: "/",
+    rest: " "
+
+}
+
 export const encodeCharacter = (char: string) => {
     return CHARACTER_IMC[char.toUpperCase() as keyof typeof CHARACTER_IMC] || ""
 }
@@ -81,7 +87,7 @@ export const decodeString = (str: string) => {
     const signals = str.split(" ")
     let result = ""
     for (let signal of signals) {
-        if (signal == "/") {
+        if (signal == SPECIAL.wordBreak) {
             result += " "
         } else {
             result += decodeCharacter(signal)
