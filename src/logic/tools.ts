@@ -7,3 +7,7 @@ export const range = (from: number, to: number) => {
   }
   return rangeArray;
 };
+
+export const wait = (milliseconds: number) => {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
