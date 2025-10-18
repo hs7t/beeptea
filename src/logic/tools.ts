@@ -1,4 +1,4 @@
-class Range {
+export class Range {
   start: number;
   end: number;
 
