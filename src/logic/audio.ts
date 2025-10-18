@@ -8,7 +8,7 @@ synth.connect(recorder)
 
 export const playSynthFrequency = async (frequency: number, time: string) => {
     await synth.triggerAttackRelease(frequency, time)
-    await Tools.wait(Tone.Time(time).toMilliseconds())
+    await Tools.wait(Tone.Time(time).toMilliseconds() + Tone.Time(synth.envelope.release).toMilliseconds())
 }
 
 export const downloadTestSound = async () => {
