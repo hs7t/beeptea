@@ -1,8 +1,8 @@
 <script lang="ts">
-    let { input, labelText, inputID } = $props()
+    let { children, labelText, inputID } = $props()
 </script>
 
 <div class="labeled">
     <label for={inputID}>{labelText}</label>
-    {@render input?.()}
+    {@render children?.()}
 </div>
