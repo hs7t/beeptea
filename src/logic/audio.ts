@@ -46,7 +46,7 @@ const defaultMorseRanges: MorseFrequencyRanges = {
     rest: new Tools.Range(250, 270),
 }
 
-export const getFrequencyForMorse = async (
+export const getFrequencyForMorse = (
     signal:
         | Tools.ValueOf<typeof Morse.SIGNALS.bursts>
         | Tools.ValueOf<typeof Morse.SIGNALS.special>,
@@ -67,13 +67,17 @@ export const getFrequencyForMorse = async (
         case Morse.SIGNALS.special.rest:
             return ranges.rest.getRandomInteger()
     }
+    return 0
 }
 
 export const createMorseTune = async (morseSequence: string) => {
     let frequencies = []
-
     for (let signal of morseSequence) {
-        frequencies.push(signal)
+        let frequency = getFrequencyForMorse(signal)
+        frequencies.push(frequency)
+    }
+    for (let frequency of frequencies) {
+        playSynthFrequency(frequency, '3n')
     }
 }
 
