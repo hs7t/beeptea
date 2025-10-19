@@ -36,15 +36,15 @@ export const playSynthFrequency = async (
 //  return randomInteger(range)
 
 type MorseFrequencyRanges = {
-    dot: Tools.Range
-    dash: Tools.Range
+    dit: Tools.Range
+    dah: Tools.Range
     wordBreak: Tools.Range
     rest: Tools.Range
 }
 
 const defaultMorseRanges: MorseFrequencyRanges = {
-    dot: new Tools.Range(300, 500),
-    dash: new Tools.Range(550, 700),
+    dit: new Tools.Range(300, 500),
+    dah: new Tools.Range(550, 700),
     wordBreak: new Tools.Range(750, 770),
     rest: new Tools.Range(250, 270),
 }
