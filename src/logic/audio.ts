@@ -32,9 +32,6 @@ export const playSynthFrequency = async (
     await Tools.wait(Tone.Time(time).toMilliseconds() + addedTime)
 }
 
-// range -> createMorseFrequency
-//  return randomInteger(range)
-
 type MorseFrequencyRanges = {
     dit: Tools.Range
     dah: Tools.Range
