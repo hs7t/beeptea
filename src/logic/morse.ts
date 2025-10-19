@@ -55,7 +55,7 @@ export const CODEMAP = {
     '@': '.--.-.',
 }
 
-export const MORSE_CHARACTERS = {
+export const SIGNALS = {
     bursts: {
         dit: '.',
         dah: '-',
@@ -85,9 +85,9 @@ export const encodeString = (str: string) => {
         if (
             char === ' ' &&
             result.length != 0 &&
-            result.trim().slice(-1) != MORSE_CHARACTERS.special.wordBreak
+            result.trim().slice(-1) != SIGNALS.special.wordBreak
         ) {
-            result += MORSE_CHARACTERS.special.wordBreak + ' '
+            result += SIGNALS.special.wordBreak + ' '
         } else {
             result += encodeCharacter(char) + ' '
         }
@@ -100,7 +100,7 @@ export const decodeString = (str: string) => {
     const signals = str.split(' ')
     let result = ''
     for (let signal of signals) {
-        if (signal == MORSE_CHARACTERS.special.wordBreak) {
+        if (signal == SIGNALS.special.wordBreak) {
             result += ' '
         } else {
             result += decodeCharacter(signal)
