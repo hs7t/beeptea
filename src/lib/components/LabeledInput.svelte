@@ -1,6 +1,8 @@
-<script>
-    let { content } = $props()
+<script lang="ts">
+    let { input, labelText, inputID } = $props()
 </script>
+
 <div class="labeled">
-    {@render content()}
+    <label for={inputID}>{labelText}</label>
+    {@render input?.()}
 </div>
