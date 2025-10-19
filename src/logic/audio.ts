@@ -18,7 +18,7 @@ export const playSynthFrequency = async (
 ) => {
     /**
      * Plays a frequency on the synth.
-     * @argument {number} frequency: A frequency in hz to play
+     * @argument {number} frequency: A frequency in Hz to play
      * @argument {string} time: a tone.js time string (ex. "8n") that the note will play for
      * @argument {InstrumentPlayerOptions} options
      */
@@ -66,6 +66,14 @@ export const getFrequencyForMorse = async (
             return ranges.wordBreak.getRandomInteger()
         case Morse.SIGNALS.special.rest:
             return ranges.rest.getRandomInteger()
+    }
+}
+
+export const createMorseTune = async (morseSequence: string) => {
+    let frequencies = []
+
+    for (let signal of morseSequence) {
+        frequencies.push(signal)
     }
 }
 
