@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { downloadMorseTune, playSynthFrequency } from '../../logic/audio'
+    import { downloadMorseTune } from '../../logic/audio'
     import { encodeString } from '../../logic/morse';
     import { appState } from '../../shared.svelte'
 </script>
