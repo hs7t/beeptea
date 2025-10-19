@@ -55,27 +55,41 @@ const CODEMAP = {
     "@": ".--.-."
 };
 
-const SPECIAL = {
-    wordBreak: '/',
-    rest: ' ',
+const MORSE_CHARACTERS = {
+    bursts: {
+        dit: '.',
+        dah: '-',
+    },
+    special: {
+        wordBreak: '/',
+        rest: ' ',
+    },
 }
 
 export const encodeCharacter = (char: string) => {
-    return CODEMAP[char.toUpperCase() as keyof typeof CODEMAP] || ""
+    return CODEMAP[char.toUpperCase() as keyof typeof CODEMAP] || ''
 }
 
 export const decodeCharacter = (char: string) => {
-    return Object.keys(CODEMAP).find(key => CODEMAP[key as keyof typeof CODEMAP] === char) || "";
+    return (
+        Object.keys(CODEMAP).find(
+            (key) => CODEMAP[key as keyof typeof CODEMAP] === char
+        ) || ''
+    )
 }
 
 export const encodeString = (str: string) => {
-    let result = ""
+    let result = ''
 
     for (let char of str) {
-        if (char === " " && result.length != 0 && result.trim().slice(-1) != SPECIAL.wordBreak) {
-            result += (SPECIAL.wordBreak + " ")
+        if (
+            char === ' ' &&
+            result.length != 0 &&
+            result.trim().slice(-1) != MORSE_CHARACTERS.special.wordBreak
+        ) {
+            result += MORSE_CHARACTERS.special.wordBreak + ' '
         } else {
-            result += (encodeCharacter(char) + " ")
+            result += encodeCharacter(char) + ' '
         }
     }
 
@@ -83,11 +97,11 @@ export const encodeString = (str: string) => {
 }
 
 export const decodeString = (str: string) => {
-    const signals = str.split(" ")
-    let result = ""
+    const signals = str.split(' ')
+    let result = ''
     for (let signal of signals) {
-        if (signal == SPECIAL.wordBreak) {
-            result += " "
+        if (signal == MORSE_CHARACTERS.special.wordBreak) {
+            result += ' '
         } else {
             result += decodeCharacter(signal)
         }
