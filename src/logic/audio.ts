@@ -69,12 +69,16 @@ export const getFrequencyForMorse = (
     switch (signal) {
         case Morse.SIGNALS.bursts.dah:
             frequency = ranges.dah.getRandomInteger()
+            break
         case Morse.SIGNALS.bursts.dit:
             frequency = ranges.dit.getRandomInteger()
+            break
         case Morse.SIGNALS.special.wordBreak:
             frequency = ranges.wordBreak.getRandomInteger()
+            break
         case Morse.SIGNALS.special.rest:
             frequency = ranges.rest.getRandomInteger()
+            break
     }
 
     frequency = Tools.toIncrement(25, frequency)
