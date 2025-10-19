@@ -31,8 +31,26 @@ export const playSynthFrequency = async (
     await Tools.wait(Tone.Time(time).toMilliseconds() + addedTime)
 }
 
-// range -> createMorseFrequency 
+// range -> createMorseFrequency
 //  return randomInteger(range)
+
+type MorseFrequencyRanges = {
+    dot: Tools.Range
+    dash: Tools.Range
+    wordBreak: Tools.Range
+    rest: Tools.Range
+}
+
+const defaultMorseRanges: MorseFrequencyRanges = {
+    dot: new Tools.Range(300, 500),
+    dash: new Tools.Range(550, 700),
+    wordBreak: new Tools.Range(750, 750),
+    rest: new Tools.Range(250, 250)
+}
+
+export const createMorseFrequency = async (range: Tools.Range) => {
+
+}
 
 export const downloadTestSound = async () => {
     recorder.start()
