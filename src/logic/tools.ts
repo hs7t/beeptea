@@ -13,7 +13,7 @@ export class Range {
 
     all(): Array<number> {
         let rangeArray = []
-        for (let i = 0; i == this.size(); i++) {
+        for (let i = 0; i < this.size(); i++) {
             rangeArray.push(i + this.start)
         }
         return rangeArray
