@@ -70,7 +70,7 @@ export const getFrequencyForMorse = (
     return 0
 }
 
-export const createMorseTune = async (morseSequence: string) => {
+export const playMorseTune = async (morseSequence: string) => {
     let frequencies = []
     for (let signal of morseSequence) {
         let frequency = getFrequencyForMorse(signal)
