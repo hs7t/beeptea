@@ -6,16 +6,25 @@ const recorder = new Tone.Recorder()
 
 synth.connect(recorder)
 
-export const playSynthFrequency = async (frequency: number, time: string, considerReleaseTime: boolean = true) => {
+type InstrumentPlayerOptions = {
+    considerReleaseTime: boolean | undefined
+}
+
+export const playSynthFrequency = async (
+    frequency: number,
+    time: string,
+    options: InstrumentPlayerOptions | undefined = undefined
+) => {
     /**
      * Plays a frequency on the synth.
-     * @argument frequency: A frequency in hz to play
-     * @argument time: a tone.js time string (ex. "8n") that the note will play for
+     * @argument {number} frequency: A frequency in hz to play
+     * @argument {string} time: a tone.js time string (ex. "8n") that the note will play for
+     * @argument {InstrumentPlayerOptions} options
      */
     await synth.triggerAttackRelease(frequency, time)
-    
-    let addedTime = 0;
-    if (considerReleaseTime == true) {
+
+    let addedTime = 0
+    if (options?.considerReleaseTime == true) {
         addedTime = Tone.Time(synth.envelope.release).toMilliseconds()
     }
 
