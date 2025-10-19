@@ -51,10 +51,17 @@ const defaultMorseRanges: MorseFrequencyRanges = {
 
 export const getFrequencyForMorse = async (
     character:
-        | typeof Morse.MORSE_CHARACTERS.bursts
-        | typeof Morse.MORSE_CHARACTERS.special,
+        | Tools.ValueOf<typeof Morse.MORSE_CHARACTERS.bursts>
+        | Tools.ValueOf<typeof Morse.MORSE_CHARACTERS.special>,
     ranges: MorseFrequencyRanges = defaultMorseRanges
-) => {}
+) => {
+    switch (character) {
+        case Morse.MORSE_CHARACTERS.bursts.dah:
+            return ranges.dah.getRandomInteger()
+        case Morse.MORSE_CHARACTERS.bursts.dit:
+            return ranges.dit.getRandomInteger()
+    }
+}
 
 export const downloadTestSound = async () => {
     recorder.start()
