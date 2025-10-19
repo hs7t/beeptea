@@ -47,12 +47,17 @@ const defaultMorseRanges: MorseFrequencyRanges = {
 }
 
 export const getFrequencyForMorse = async (
-    character:
+    signal:
         | Tools.ValueOf<typeof Morse.SIGNALS.bursts>
         | Tools.ValueOf<typeof Morse.SIGNALS.special>,
     ranges: MorseFrequencyRanges = defaultMorseRanges
 ) => {
-    switch (character) {
+    /**
+     * @argument {string} signal: either a burst or special morse signal
+     * @argument {MorseFrequencyRanges} ranges: a set of morse frequency ranges
+     * @returns {number}: a Hz frequency for the signal
+     */
+    switch (signal) {
         case Morse.SIGNALS.bursts.dah:
             return ranges.dah.getRandomInteger()
         case Morse.SIGNALS.bursts.dit:
