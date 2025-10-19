@@ -1,4 +1,4 @@
-import { get } from 'svelte/store'
+export type ValueOf<T> = T[keyof T]
 
 export class Range {
     start: number
