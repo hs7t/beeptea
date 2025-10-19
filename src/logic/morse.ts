@@ -56,9 +56,8 @@ const CODEMAP = {
 };
 
 const SPECIAL = {
-    wordBreak: "/",
-    rest: " "
-
+    wordBreak: '/',
+    rest: ' ',
 }
 
 export const encodeCharacter = (char: string) => {
