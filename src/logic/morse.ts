@@ -96,7 +96,7 @@ export const encodeString = (str: string) => {
     return result
 }
 
-export const decodeString = (str: string) => {
+export const decodeSequence = (str: string) => {
     const signals = str.split(' ')
     let result = ''
     for (let signal of signals) {
