@@ -81,7 +81,7 @@ export const getFrequencyForMorse = (
             break
     }
 
-    frequency = Tools.toIncrement(25, frequency)
+    frequency = Tools.toIncrement(50, frequency)
     return frequency
 }
 
