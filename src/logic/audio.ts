@@ -1,6 +1,7 @@
 import * as Tone from 'tone'
 import * as Tools from './tools'
 import * as Morse from './morse'
+import type { Time } from 'tone/build/esm/core/type/Units'
 
 const synth = new Tone.Synth().toDestination()
 const recorder = new Tone.Recorder()
@@ -14,15 +15,20 @@ type InstrumentPlayerOptions = {
 export const playSynthFrequency = async (
     frequency: number,
     time: string,
-    options: InstrumentPlayerOptions | undefined = undefined
+    options?: InstrumentPlayerOptions | undefined,
+    startTime?: Time | undefined
 ) => {
     /**
      * Plays a frequency on the synth.
      * @argument {number} frequency: A frequency in Hz to play
      * @argument {string} time: a tone.js time string (ex. "8n") that the note will play for
      * @argument {InstrumentPlayerOptions} options
+     * @argument {Time} startTime: A time to start the note at (if unset, Tone.now())
      */
-    await synth.triggerAttackRelease(frequency, time)
+
+    const scheduledTime = startTime ?? Tone.now()
+
+    await synth.triggerAttackRelease(frequency, time, scheduledTime)
 
     let addedTime = 0
     if (options?.considerReleaseTime == true) {
