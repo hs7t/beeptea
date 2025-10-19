@@ -44,8 +44,8 @@ type MorseFrequencyRanges = {
 const defaultMorseRanges: MorseFrequencyRanges = {
     dot: new Tools.Range(300, 500),
     dash: new Tools.Range(550, 700),
-    wordBreak: new Tools.Range(750, 750),
-    rest: new Tools.Range(250, 250)
+    wordBreak: new Tools.Range(750, 770),
+    rest: new Tools.Range(250, 270),
 }
 
 export const createMorseFrequency = async (range: Tools.Range) => {
