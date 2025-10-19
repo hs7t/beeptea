@@ -5,6 +5,5 @@
 </script>
 
 <section>
-    <button onclick={() => playSynthFrequency(500, "8n")}>play sound</button>
     <button onclick={() => downloadMorseTune(encodeString(appState.currentInputString))}>download sound</button>
 </section>
