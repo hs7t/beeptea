@@ -38,14 +38,14 @@ export const playSynthFrequency = async (
     await Tools.wait(Tone.Time(time).toMilliseconds() + addedTime)
 }
 
-type MorseFrequencyRanges = {
+export type MorseFrequencyRanges = {
     dit: Tools.Range
     dah: Tools.Range
     wordBreak: Tools.Range
     rest: Tools.Range
 }
 
-const defaultMorseRanges: MorseFrequencyRanges = {
+export const defaultMorseRanges: MorseFrequencyRanges = {
     dit: new Tools.Range(300, 500),
     dah: new Tools.Range(550, 700),
     wordBreak: new Tools.Range(750, 770),
