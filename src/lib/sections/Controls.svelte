@@ -3,5 +3,7 @@
 </script>
 
 <section class="area controls-area">
-
+    {#each Object.entries(appState.tuneOptions.ranges) as [key, range]}
+        {key}
+    {/each}
 </section>
