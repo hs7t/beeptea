@@ -77,7 +77,7 @@ export const playMorseTune = async (morseSequence: string) => {
         frequencies.push(frequency)
     }
     for (let frequency of frequencies) {
-        playSynthFrequency(frequency, '3n')
+        await playSynthFrequency(frequency, '3n')
     }
 }
 
