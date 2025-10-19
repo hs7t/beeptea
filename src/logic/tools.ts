@@ -1,3 +1,5 @@
+import { get } from 'svelte/store'
+
 export class Range {
     start: number
     end: number
@@ -21,6 +23,10 @@ export class Range {
 
     getRandom(): number {
         return Math.random() * (this.end - this.start) + this.start
+    }
+
+    getRandomInteger(): number {
+        return Math.round(this.getRandom())
     }
 }
 
