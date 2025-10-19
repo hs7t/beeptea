@@ -63,17 +63,22 @@ export const getFrequencyForMorse = (
      * @argument {MorseFrequencyRanges} ranges: a set of morse frequency ranges
      * @returns {number}: a Hz frequency for the signal
      */
+
+    let frequency = 0
+
     switch (signal) {
         case Morse.SIGNALS.bursts.dah:
-            return ranges.dah.getRandomInteger()
+            frequency = ranges.dah.getRandomInteger()
         case Morse.SIGNALS.bursts.dit:
-            return ranges.dit.getRandomInteger()
+            frequency = ranges.dit.getRandomInteger()
         case Morse.SIGNALS.special.wordBreak:
-            return ranges.wordBreak.getRandomInteger()
+            frequency = ranges.wordBreak.getRandomInteger()
         case Morse.SIGNALS.special.rest:
-            return ranges.rest.getRandomInteger()
+            frequency = ranges.rest.getRandomInteger()
     }
-    return 0
+
+    frequency = Tools.toIncrement(25, frequency)
+    return frequency
 }
 
 export const playMorseTune = async (morseSequence: string) => {
