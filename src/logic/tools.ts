@@ -33,3 +33,7 @@ export class Range {
 export const wait = (milliseconds: number) => {
     return new Promise((resolve) => setTimeout(resolve, milliseconds))
 }
+
+export const toIncrement = (n: number, increment: number) => {
+    return n - (n % increment)
+}
