@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { encodeString, decodeString } from '../../logic/morse'
+    import { encodeString } from '../../logic/morse'
     let encoderTextInput = $state("")
     let encodedInput = $derived(encodeString(encoderTextInput))
 </script>
