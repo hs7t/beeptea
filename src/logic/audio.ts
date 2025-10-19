@@ -60,6 +60,10 @@ export const getFrequencyForMorse = async (
             return ranges.dah.getRandomInteger()
         case Morse.SIGNALS.bursts.dit:
             return ranges.dit.getRandomInteger()
+        case Morse.SIGNALS.special.wordBreak:
+            return ranges.wordBreak.getRandomInteger()
+        case Morse.SIGNALS.special.rest:
+            return ranges.rest.getRandomInteger()
     }
 }
 
