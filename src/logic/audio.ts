@@ -9,14 +9,14 @@ const recorder = new Tone.Recorder()
 synth.connect(recorder)
 
 type InstrumentPlayerOptions = {
-    considerReleaseTime: boolean | undefined
+    considerReleaseTime?: boolean | undefined
+    startTime?: Time | undefined
 }
 
 export const playSynthFrequency = async (
     frequency: number,
     time: string,
-    options?: InstrumentPlayerOptions | undefined,
-    startTime?: Time | undefined
+    options?: InstrumentPlayerOptions | undefined
 ) => {
     /**
      * Plays a frequency on the synth.
@@ -26,7 +26,7 @@ export const playSynthFrequency = async (
      * @argument {Time} startTime: A time to start the note at (if unset, Tone.now())
      */
 
-    const scheduledTime = startTime ?? Tone.now()
+    const scheduledTime = options?.startTime ?? Tone.now()
 
     await synth.triggerAttackRelease(frequency, time, scheduledTime)
 
@@ -82,8 +82,13 @@ export const playMorseTune = async (morseSequence: string) => {
         let frequency = getFrequencyForMorse(signal)
         frequencies.push(frequency)
     }
-    for (let frequency of frequencies) {
-        await playSynthFrequency(frequency, '3n')
+
+    let startTime = Tone.now()
+    let currentTime = startTime
+    for (let signal of morseSequence) {
+        let frequency = getFrequencyForMorse(signal)
+        await playSynthFrequency(frequency, '3n', { startTime: currentTime })
+        currentTime += Tone.Time('3n').toSeconds()
     }
 }
 
