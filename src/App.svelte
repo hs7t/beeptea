@@ -1,11 +1,11 @@
 <script lang="ts">
   import Encoding from "./lib/sections/Encoding.svelte";
-  import Trainwreck from "./lib/sections/Trainwreck.svelte";
+  import Player from "./lib/sections/Player.svelte"
 </script>
 
 <main>
     <Encoding />
-    <Trainwreck />
+    <Player></Player>
 </main>
 
 <style>
