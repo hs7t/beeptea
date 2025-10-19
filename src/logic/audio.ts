@@ -81,13 +81,13 @@ export const playMorseTune = async (morseSequence: string) => {
     }
 }
 
-export const downloadTestSound = async () => {
+export const downloadMorseTune = async (morseSequence: string) => {
     recorder.start()
-    await playSynthFrequency(500, "8n")
+    await playMorseTune(morseSequence)
     const recording = await recorder.stop()
     const recordingURL = URL.createObjectURL(recording)
-    const anchor = document.createElement("a")
-	anchor.download = "recording.webm"
-	anchor.href = recordingURL
-	anchor.click()
+    const anchor = document.createElement('a')
+    anchor.download = 'recording.webm'
+    anchor.href = recordingURL
+    anchor.click()
 }
