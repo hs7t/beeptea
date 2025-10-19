@@ -1,5 +1,6 @@
 import * as Tone from 'tone'
 import * as Tools from './tools'
+import * as Morse from './morse'
 
 const synth = new Tone.Synth().toDestination()
 const recorder = new Tone.Recorder()
@@ -48,9 +49,12 @@ const defaultMorseRanges: MorseFrequencyRanges = {
     rest: new Tools.Range(250, 270),
 }
 
-export const createMorseFrequency = async (range: Tools.Range) => {
-
-}
+export const getFrequencyForMorse = async (
+    character:
+        | typeof Morse.MORSE_CHARACTERS.bursts
+        | typeof Morse.MORSE_CHARACTERS.special,
+    ranges: MorseFrequencyRanges = defaultMorseRanges
+) => {}
 
 export const downloadTestSound = async () => {
     recorder.start()
