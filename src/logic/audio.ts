@@ -145,10 +145,24 @@ export const playTune = async (tune: Tune) => {
     }
 }
 
-export const tuneToNotation = (tune: Tune) => {
+export const tuneMorseToNotation = (
+    tune: Tune,
+    frequencyRanges: MorseFrequencyRanges,
+    frequencySubdivisions: MorseFrequencyRangeSubdivisions
+) => {
     let representations = []
     for (let block of tune) {
-        const note = block.frequency.toString(36) // converts to base36
+        // check whether it's a dit, dah...
+        let morseCharType: keyof typeof frequencyRanges = 'rest'
+        for (let [key, range] of Object.entries(frequencyRanges)) {
+            if (block.frequency in range.all()) {
+                morseCharType = key as keyof typeof frequencyRanges
+            }
+        }
+
+        const frequencyAsPartition =
+            block.frequency / frequencySubdivisions[morseCharType]
+        const note = frequencyAsPartition.toString(36) // converts to base36
         const representation = note.repeat(block.beatLength) // repeats by beatLength
 
         representations.push(representation)
