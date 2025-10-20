@@ -4,5 +4,5 @@
 </script>
 
 <section>
-    <button onclick={() => playAndRecord(appState.tune)}>download sound</button>
+    <button onclick={() => playAndRecord(appState.tune, appState.recorder)}>Play</button>
 </section>
