@@ -1,6 +1,6 @@
 <script>
     let {
-        content = $bindable('click me!'),
+        children = undefined,
         action,
         disabled = $bindable(false),
         id = 'button-r',
@@ -14,5 +14,5 @@
     {id}
     class={primary ? 'primary' : 'secondary'}
 >
-    {content}
+    {@render children?.()}
 </button>
