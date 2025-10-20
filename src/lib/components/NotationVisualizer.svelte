@@ -6,7 +6,7 @@
 
 <div class="notation-visualizer">
     {#each blocks as block}
-        <p>{block}</p>
+        <span class="block">{block}</span>
     {/each}
 </div>
 
@@ -22,7 +22,11 @@
         background-color: var(--b-color-overlay-background);
     }
 
-    .notation-visualizer p {
+    .notation-visualizer .block {
+        border: solid 0.1ch #d3d3d3;
+        background-color: #ffffff;
+        border-radius: 3pt;
+        padding: 0.5ch;
         text-align: center;
         white-space: nowrap;
     }
