@@ -132,7 +132,13 @@ export const getTuneForMorse = (
     }
 }
 
-export const playBlocks = () => {
+export const playTune = async (tune: Tune) => {
+    let startTime = Tone.now()
+    let currentTime = startTime
+    for (let block of tune) {
+        await playSynthFrequency(block.frequency, '3n', { startTime: currentTime })
+        currentTime += Tone.Time('3n').toSeconds()
+    }
 
 }
 
