@@ -3,10 +3,12 @@ import { defaultMorseFrequencyRangeSubdivisions, defaultMorseRanges } from './lo
 
 export let appState = $state({
     currentInputString: 'Hello, world!',
+    tune: [],
     tuneOptions: {
         tone: {
             ranges: defaultMorseRanges as MorseFrequencyRanges,
-            rangeSubdivisions: defaultMorseFrequencyRangeSubdivisions as MorseFrequencyRangeSubdivisions
-        }
+            rangeSubdivisions:
+                defaultMorseFrequencyRangeSubdivisions as MorseFrequencyRangeSubdivisions,
+        },
     },
 })
