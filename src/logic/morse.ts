@@ -79,6 +79,7 @@ export const decodeCharacter = (char: string) => {
 }
 
 export const encodeString = (str: string) => {
+    str = str ?? ''
     let result = ''
 
     for (let char of str) {
