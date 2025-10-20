@@ -1,9 +1,13 @@
 <script>
     let { notation } = $props()
+
+    let blocks = $derived(notation.split(" "))
 </script>
 
 <div class="notation-visualizer">
-    <p>{notation}</p>
+    {#each blocks as block}
+        <p>{block}</p>
+    {/each}
 </div>
 
 <style>
@@ -14,6 +18,7 @@
         border-radius: var(--b-radius-small);
 
         padding: 0.2rem;
+        gap: 1ch;
         background-color: var(--b-color-overlay-background);
     }
 
