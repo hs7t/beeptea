@@ -37,3 +37,12 @@ export const wait = (milliseconds: number) => {
 export const toIncrement = (increment: number, n: number) => {
     return n - (n % increment)
 }
+
+export const getKeyByValue = <T extends Record<string, any>>(
+    obj: T,
+    value: T[keyof T]
+): keyof T | undefined => {
+    return Object.keys(obj).find((key) => obj[key as keyof T] === value) as
+        | keyof T
+        | undefined
+}
