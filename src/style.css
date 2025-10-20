@@ -1,10 +1,14 @@
 :root {
     --b-color-background-primary: #ffffff;
     --b-color-primary: #272727;
+    --b-color-secondary: #444444;
 
     --b-border-sectional: dashed 1pt var(--b-color-primary);
-
+    --b-border-secondary: solid 1pt var(--b-border-secondary);
+    
     --b-radius-large: 3pt;
+
+    --b-font-primary: Inter; 
 }
 
 *,
@@ -24,11 +28,12 @@
 }
 
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-
     color: var(--b-color-primary);
     background-color: var(--b-color-background-primary);
+
+    font-family: var(--b-font-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 img,
