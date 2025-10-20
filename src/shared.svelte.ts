@@ -14,7 +14,9 @@ export let appState = $state({
     userInput: {
         currentString: 'Hello, world!',
     },
-    tune: [] as Tune,
+    get tune(): Tune {
+        return getTuneForMorse(encodeString(appState.userInput.currentString))
+    },
     tuneOptions: {
         tone: {
             ranges: defaultMorseRanges as MorseFrequencyRanges,
@@ -23,5 +25,3 @@ export let appState = $state({
         },
     },
 })
-
-appState.tune = getTuneForMorse(encodeString(appState.userInput.currentString))
