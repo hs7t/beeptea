@@ -105,6 +105,25 @@ export const getFrequencyForMorse = (
     return frequency
 }
 
+export const getRandomBlockBeatlength = (bounds: Tools.Range = new Tools.Range(1, 4)) => {
+    return bounds.getRandomInteger()
+}
+
+export const getBlocksForMorse = (
+    morseSequence: string,
+    ranges: MorseFrequencyRanges = defaultMorseRanges,
+    rangeSubdivisions: MorseFrequencyRangeSubdivisions = defaultMorseFrequencyRangeSubdivisions,
+    beatLengthBounds: Tools.Range = new Tools.Range(1, 4)
+) => {
+    let blocks = []
+    for (let signal of morseSequence) {
+        blocks.push({
+            frequency: getFrequencyForMorse(signal, ranges, rangeSubdivisions), 
+            length: getRandomBlockBeatlength(beatLengthBounds)
+        })
+    }
+}
+
 export const playMorseTune = async (morseSequence: string) => {
     let frequencies = []
     for (let signal of morseSequence) {
