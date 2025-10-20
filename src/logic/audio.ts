@@ -136,10 +136,15 @@ export const playTune = async (tune: Tune) => {
     let startTime = Tone.now()
     let currentTime = startTime
     for (let block of tune) {
-        await playSynthFrequency(block.frequency, '3n', { startTime: currentTime })
+        await playSynthFrequency(
+            block.frequency,
+            Tone.Time(block.beatLength, 'n').toNotation(),
+            {
+                startTime: currentTime,
+            }
+        )
         currentTime += Tone.Time('3n').toSeconds()
     }
-
 }
 
 export const playMorseTune = async (morseSequence: string) => {
