@@ -1,9 +1,9 @@
 <script>
-    let { text } = $props()
+    let { notation } = $props()
 </script>
 
 <div class="notation-visualizer">
-    <p>{text}</p>
+    <p>{notation}</p>
 </div>
 
 <style>

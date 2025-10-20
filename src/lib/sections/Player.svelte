@@ -26,7 +26,7 @@
 
 <section>
 
-    <NotationVisualizer text={notation}></NotationVisualizer>
+    <NotationVisualizer {notation}></NotationVisualizer>
     <div>
         <Button action={() => playAndRecord(appState.tune, appState.recorder)}>Play</Button>
         <Button action={() => toggleRecorder()}>{recordingEnabled ? 'Disable' : 'Enable'} recorder</Button>
