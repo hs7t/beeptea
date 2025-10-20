@@ -4,9 +4,10 @@ import * as Morse from './morse'
 import type { Time } from 'tone/build/esm/core/type/Units'
 
 const synth = new Tone.Synth().toDestination()
-const recorder = new Tone.Recorder()
 
-synth.connect(recorder)
+export const getRecorder = () => {
+    return new Tone.Recorder()
+}
 
 type InstrumentPlayerOptions = {
     considerReleaseTime?: boolean | undefined
@@ -53,18 +54,19 @@ export const defaultMorseRanges: MorseFrequencyRanges = {
 }
 
 export type MorseFrequencyRangeSubdivisions = {
-    dit: number,
-    dah: number,
-    wordBreak: number,
-    rest: number,
+    dit: number
+    dah: number
+    wordBreak: number
+    rest: number
 }
 
-export const defaultMorseFrequencyRangeSubdivisions: MorseFrequencyRangeSubdivisions = {
-    dit: 50,
-    dah: 50,
-    wordBreak: 50,
-    rest: 50
-}
+export const defaultMorseFrequencyRangeSubdivisions: MorseFrequencyRangeSubdivisions =
+    {
+        dit: 50,
+        dah: 50,
+        wordBreak: 50,
+        rest: 50,
+    }
 
 export const getFrequencyForMorse = (
     signal:
@@ -106,13 +108,15 @@ export const getFrequencyForMorse = (
 }
 
 export type Block = {
-    frequency: number,
+    frequency: number
     beatLength: number
 }
 
 export type Tune = Array<Block>
 
-export const getRandomBlockBeatlength = (bounds: Tools.Range = new Tools.Range(1, 4)) => {
+export const getRandomBlockBeatlength = (
+    bounds: Tools.Range = new Tools.Range(1, 4)
+) => {
     return bounds.getRandomInteger()
 }
 
@@ -126,15 +130,17 @@ export const getTuneForMorse = (
     for (let signal of morseSequence) {
         if (signal == ' ') continue
         const block: Block = {
-            frequency: getFrequencyForMorse(signal, ranges, rangeSubdivisions), 
-            beatLength: getRandomBlockBeatlength(beatLengthBounds)
+            frequency: getFrequencyForMorse(signal, ranges, rangeSubdivisions),
+            beatLength: getRandomBlockBeatlength(beatLengthBounds),
         }
         tune.push(block)
     }
     return tune
 }
 
-export const playTune = async (tune: Tune) => {
+export const playTune = async (tune: Tune, recorder?: Tone.Recorder) => {
+    if (recorder) synth.connect(recorder)
+
     let startTime = Tone.now()
     let currentTime = startTime
     for (let block of tune) {
@@ -191,13 +197,24 @@ export const notationToTune = (notation: string) => {
     return tune
 }
 
-export const playAndRecord = async (tune: Tune) => {
-    recorder.start()
+export const playAndRecord = async (
+    tune: Tune,
+    recorder?: Tone.Recorder,
+    stopRecorder = true
+) => {
+    if (recorder) recorder.start()
+
     await playTune(tune)
-    const recording = await recorder.stop()
-    const recordingURL = URL.createObjectURL(recording)
-    const anchor = document.createElement('a')
-    anchor.download = 'recording.webm'
-    anchor.href = recordingURL
-    anchor.click()
+
+    if (recorder) {
+        const recording = await recorder.stop()
+        const recordingURL = URL.createObjectURL(recording)
+        const anchor = document.createElement('a')
+
+        anchor.download = 'recording.webm'
+        anchor.href = recordingURL
+        anchor.click()
+
+        if (stopRecorder) recorder.stop()
+    }
 }
