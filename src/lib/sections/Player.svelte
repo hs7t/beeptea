@@ -1,9 +1,8 @@
 <script lang="ts">
-    import { downloadMorseTune } from '../../logic/audio'
-    import { encodeString } from '../../logic/morse';
+    import { playAndRecord } from '../../logic/audio'
     import { appState } from '../../shared.svelte'
 </script>
 
 <section>
-    <button onclick={() => downloadMorseTune(encodeString(appState.currentInputString))}>download sound</button>
+    <button onclick={() => playAndRecord(appState.tune)}>download sound</button>
 </section>
