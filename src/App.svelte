@@ -21,10 +21,13 @@
 
         display: flex;
         flex-direction: column;
+
+        gap: 1rem;
     }
 
     :global(section) {
         border: var(--b-border-sectional);
         border-radius: var(--b-radius-large);
+        padding: 1rem;
     }
 </style>
