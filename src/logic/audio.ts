@@ -174,7 +174,9 @@ export const notationToTune = (notation: string) => {
             block.beatLength += 1
             block.frequency = parseInt(character, 36) // converts from base36, a bit flexible on purpose
         }
+        tune.push(block)
     }
+    return tune
 }
 
 export const playAndRecord = async (tune: Tune) => {
