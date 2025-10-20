@@ -124,6 +124,7 @@ export const getTuneForMorse = (
 ) => {
     let tune: Tune = []
     for (let signal of morseSequence) {
+        if (signal == ' ') continue
         const block: Block = {
             frequency: getFrequencyForMorse(signal, ranges, rangeSubdivisions), 
             beatLength: getRandomBlockBeatlength(beatLengthBounds)
