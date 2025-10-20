@@ -2,12 +2,12 @@
     let { text } = $props()
 </script>
 
-<div class="tune-visualizer">
+<div class="notation-visualizer">
     <p>{text}</p>
 </div>
 
 <style>
-    .tune-visualizer {
+    .notation-visualizer {
         overflow-x: scroll;
         display: flex;
         align-items: center;
@@ -17,21 +17,21 @@
         background-color: var(--b-color-overlay-background);
     }
 
-    .tune-visualizer p {
+    .notation-visualizer p {
         text-align: center;
         white-space: nowrap;
     }
 
-    .tune-visualizer::-webkit-scrollbar {
+    .notation-visualizer::-webkit-scrollbar {
         width: 0.6rem;
     }
 
-    .tune-visualizer::-webkit-scrollbar-track {
+    .notation-visualizer::-webkit-scrollbar-track {
         background: #e3e3e3;
         border-radius: 10pt;
     }
     
-    .tune-visualizer::-webkit-scrollbar-thumb {
+    .notation-visualizer::-webkit-scrollbar-thumb {
         background: #b3b3b3;
         border-radius: 10pt;
     }
