@@ -24,6 +24,9 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+  color: var(--b-color-primary);
+  background-color: var(--b-color-background-primary);
 }
 
 img, picture, video, canvas, svg {
