@@ -159,6 +159,23 @@ export const tuneToNotation = (tune: Tune) => {
     return representations.join(' ') // woohoo
 }
 
+export const notationToTune = (notation: string) => {
+    let representations = notation.split(' ')
+    let tune: Tune = []
+
+    for (let representation of representations) {
+        let block: Block = {
+            beatLength: 0,
+            frequency: 0,
+        }
+
+        for (let character of representation) {
+            block.beatLength += 1
+            block.frequency = parseInt(character, 36) // converts from base36, a bit flexible on purpose
+        }
+    }
+}
+
 export const playMorseTune = async (morseSequence: string) => {
     let frequencies = []
     for (let signal of morseSequence) {
