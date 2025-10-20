@@ -20,7 +20,11 @@
                     }
                 ></FromToNumberInput>
                 <div>
-                    subdivisions: <input type="number">
+                    subdivisions: 
+                    <input 
+                        type="number"
+                        bind:value={appState.tuneOptions.tone.rangeSubdivisions[key as keyof typeof appState.tuneOptions.tone.rangeSubdivisions]}
+                    >
                 </div>
             </Fieldset>
         {/each}
