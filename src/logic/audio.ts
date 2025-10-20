@@ -130,6 +130,7 @@ export const getTuneForMorse = (
         }
         tune.push(block)
     }
+    return tune
 }
 
 export const playTune = async (tune: Tune) => {
