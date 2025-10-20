@@ -71,6 +71,7 @@ export const getFrequencyForMorse = (
         | Tools.ValueOf<typeof Morse.SIGNALS.bursts>
         | Tools.ValueOf<typeof Morse.SIGNALS.special>,
     ranges: MorseFrequencyRanges = defaultMorseRanges,
+    rangeSubdivisions: MorseFrequencyRangeSubdivisions = defaultMorseFrequencyRangeSubdivisions
 ) => {
     /**
      * @argument {string} signal: either a burst or special morse signal
@@ -79,23 +80,28 @@ export const getFrequencyForMorse = (
      */
 
     let frequency = 0
+    let rangeIncrements = 0
 
     switch (signal) {
         case Morse.SIGNALS.bursts.dah:
             frequency = ranges.dah.getRandomInteger()
+            rangeIncrements = rangeSubdivisions.dah
             break
         case Morse.SIGNALS.bursts.dit:
             frequency = ranges.dit.getRandomInteger()
+            rangeIncrements = rangeSubdivisions.dit
             break
         case Morse.SIGNALS.special.wordBreak:
             frequency = ranges.wordBreak.getRandomInteger()
+            rangeIncrements = rangeSubdivisions.wordBreak
             break
         case Morse.SIGNALS.special.rest:
             frequency = ranges.rest.getRandomInteger()
+            rangeIncrements = rangeSubdivisions.rest
             break
     }
 
-    frequency = Tools.toIncrement(50, frequency)
+    frequency = Tools.toIncrement(rangeIncrements, frequency)
     return frequency
 }
 
