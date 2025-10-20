@@ -1,3 +1,4 @@
+import type { Recorder } from 'tone'
 import type {
     MorseFrequencyRanges,
     MorseFrequencyRangeSubdivisions,
@@ -6,6 +7,7 @@ import type {
 import {
     defaultMorseFrequencyRangeSubdivisions,
     defaultMorseRanges,
+    getRecorder,
     getTuneForMorse,
 } from './logic/audio'
 import { encodeString } from './logic/morse'
@@ -17,6 +19,7 @@ export let appState = $state({
     get tune(): Tune {
         return getTuneForMorse(encodeString(appState.userInput.currentString))
     },
+    recorder: getRecorder() as Recorder | undefined,
     tuneOptions: {
         tone: {
             ranges: defaultMorseRanges as MorseFrequencyRanges,
@@ -25,3 +28,11 @@ export let appState = $state({
         },
     },
 })
+
+export const toggleRecorder = () => {
+    if (appState.recorder != undefined) {
+        appState.recorder = undefined
+    } else {
+        appState.recorder = getRecorder()
+    }
+}
