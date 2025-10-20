@@ -23,4 +23,8 @@
         flex-direction: column;
     }
 
+    :global(section) {
+        border: var(--b-border-sectional);
+        border-radius: var(--b-radius-large);
+    }
 </style>
