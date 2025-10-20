@@ -2,8 +2,8 @@
     --b-color-background-primary: #ffffff;
     --b-color-overlay-background: #f7f7f7;
     --b-color-primary: #272727;
-    --b-color-secondary: #444444;
-    --b-color-tertiary: #828282;
+    --b-color-secondary: #5a5a5a;
+    --b-color-tertiary: #d6d6d6;
 
     --b-border-sectional: dashed 1pt var(--b-color-primary);
     --b-border-secondary: solid 1pt var(--b-color-tertiary);
@@ -68,6 +68,7 @@ h6 {
 p {
     text-wrap: pretty;
 }
+
 h1,
 h2,
 h3,
