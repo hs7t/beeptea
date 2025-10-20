@@ -1,3 +1,10 @@
+:root {
+  --b-color-background-primary: #B6D094;
+  --b-color-primary: #232020;
+
+  --b-border-sectional: dashed 1pt var(--b-color-primary);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
