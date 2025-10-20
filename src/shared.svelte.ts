@@ -9,7 +9,9 @@ import {
 } from './logic/audio'
 
 export let appState = $state({
-    currentInputString: 'Hello, world!',
+    userInput: {
+        currentString: 'Hello, world!',
+    },
     tune: [] as Tune,
     tuneOptions: {
         tone: {
