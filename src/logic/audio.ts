@@ -176,22 +176,6 @@ export const notationToTune = (notation: string) => {
     }
 }
 
-export const playMorseTune = async (morseSequence: string) => {
-    let frequencies = []
-    for (let signal of morseSequence) {
-        let frequency = getFrequencyForMorse(signal)
-        frequencies.push(frequency)
-    }
-
-    let startTime = Tone.now()
-    let currentTime = startTime
-    for (let signal of morseSequence) {
-        let frequency = getFrequencyForMorse(signal)
-        await playSynthFrequency(frequency, '3n', { startTime: currentTime })
-        currentTime += Tone.Time('3n').toSeconds()
-    }
-}
-
 export const playAndRecord = async (tune: Tune) => {
     recorder.start()
     await playTune(tune)
