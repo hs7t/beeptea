@@ -124,6 +124,10 @@ export const getBlocksForMorse = (
     }
 }
 
+export const playBlocks = () => {
+    
+}
+
 export const playMorseTune = async (morseSequence: string) => {
     let frequencies = []
     for (let signal of morseSequence) {
