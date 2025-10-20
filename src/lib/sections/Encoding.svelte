@@ -1,12 +1,11 @@
 <script lang="ts">
     import { encodeString } from '../../logic/morse'
     import { appState } from '../../shared.svelte'
-    let encodedString = $derived(encodeString(appState.currentInputString))
 </script>
 
 <section class="area encoding-area">
-    <textarea bind:value={appState.currentInputString}></textarea>
+    <textarea bind:value={appState.userInput.currentString}></textarea>
     <div>
-        <p>{encodedString}</p>
+        <p>{encodeString(appState.userInput.currentString)}</p>
     </div>
 </section>
