@@ -2,9 +2,15 @@
     let { children, labelText } = $props()
 </script>
 
-<div class="labeled">
-    <fieldset>
-        <legend >{labelText}</legend>
-        {@render children?.()}
-    </fieldset>
-</div>
+<fieldset>
+    <legend >{labelText}</legend>
+    {@render children?.()}
+</fieldset>
+
+<style>
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+</style>
