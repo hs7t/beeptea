@@ -29,6 +29,15 @@
         padding: 0.5ch;
         text-align: center;
         white-space: nowrap;
+        transition: all 400ms;
+    }
+
+    .notation-visualizer .block:hover {
+        transform: rotate(4deg);
+    }
+
+    .notation-visualizer .block:active {
+        transform: scale(1.06) rotate(0);
     }
 
     .notation-visualizer::-webkit-scrollbar {
