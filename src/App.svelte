@@ -13,4 +13,14 @@
 </main>
 
 <style>
+    main {
+        width: 80dvw;
+        padding-top: 10dvh;
+        padding-bottom: 10dvh;
+        margin: auto;
+
+        display: flex;
+        flex-direction: column;
+    }
+
 </style>
