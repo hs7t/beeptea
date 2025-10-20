@@ -8,6 +8,7 @@ import {
     defaultMorseRanges,
     getTuneForMorse,
 } from './logic/audio'
+import { encodeString } from './logic/morse'
 
 export let appState = $state({
     userInput: {
@@ -23,4 +24,4 @@ export let appState = $state({
     },
 })
 
-appState.tune = getTuneForMorse(appState.userInput.currentString)
+appState.tune = getTuneForMorse(encodeString(appState.userInput.currentString))
