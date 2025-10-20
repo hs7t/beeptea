@@ -46,17 +46,31 @@ export type MorseFrequencyRanges = {
 }
 
 export const defaultMorseRanges: MorseFrequencyRanges = {
-    dit: new Tools.Range(300, 500),
+    dit: new Tools.Range(350, 500),
     dah: new Tools.Range(550, 700),
-    wordBreak: new Tools.Range(750, 770),
-    rest: new Tools.Range(250, 270),
+    wordBreak: new Tools.Range(750, 800),
+    rest: new Tools.Range(250, 300),
+}
+
+export type MorseFrequencyRangeSubdivisions = {
+    dit: number,
+    dah: number,
+    wordBreak: number,
+    rest: number,
+}
+
+export const defaultMorseFrequencyRangeSubdivisions: MorseFrequencyRangeSubdivisions = {
+    dit: 50,
+    dah: 50,
+    wordBreak: 50,
+    rest: 50
 }
 
 export const getFrequencyForMorse = (
     signal:
         | Tools.ValueOf<typeof Morse.SIGNALS.bursts>
         | Tools.ValueOf<typeof Morse.SIGNALS.special>,
-    ranges: MorseFrequencyRanges = defaultMorseRanges
+    ranges: MorseFrequencyRanges = defaultMorseRanges,
 ) => {
     /**
      * @argument {string} signal: either a burst or special morse signal
