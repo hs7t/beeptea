@@ -20,6 +20,7 @@
         padding: 0.5em;
         user-select: none;
         cursor: pointer;
+        transition: all 50ms;
     }
 
     summary:hover {
@@ -28,7 +29,7 @@
 
     details:not([open]) {
         height: auto;
-        transition: all;
+        transition: all 100ms;
     }
 
     details[open] {
@@ -38,5 +39,6 @@
     details[open] summary {
         border-bottom: var(--b-border-secondary);
         margin-bottom: 0.5em;
+        font-weight: 600;
     }
 </style>
