@@ -1,6 +1,7 @@
 <script lang="ts">
     import { playAndRecord, tuneMorseToNotation } from '../../logic/audio'
     import { appState, toggleRecorder } from '../../shared.svelte'
+    import Button from '../components/Button.svelte'
     import TextVisualizer from '../components/TextVisualizer.svelte'
 
     let notation = $derived(
@@ -25,7 +26,7 @@
 <section>
     <TextVisualizer text={notation}></TextVisualizer>
     <div>
-        <button onclick={() => toggleRecorder()}>Toggle recording (enabled: {recordingEnabled})</button>
-        <button onclick={() => playAndRecord(appState.tune, appState.recorder)}>Play</button>
+        <Button action={() => playAndRecord(appState.tune, appState.recorder)}>Play</Button>
+        <Button action={() => toggleRecorder()}>{recordingEnabled ? 'Enable' : 'Disable'} recorder</Button>
     </div>
 </section>
