@@ -8,17 +8,20 @@
 <section class="area controls-area">
     <h2>Options</h2>
     <Details summary="Frequency ranges">
-        {#each Object.entries(appState.tuneOptions.ranges) as [key, range]}
+        {#each Object.entries(appState.tuneOptions.tone.ranges) as [key, range]}
             <Fieldset labelText={`${key}`}>
                 <FromToNumberInput 
                     id={`${key}-range-input`} 
                     bind:from={
-                        appState.tuneOptions.ranges[key as keyof typeof appState.tuneOptions.ranges].start
+                        appState.tuneOptions.tone.ranges[key as keyof typeof appState.tuneOptions.tone.ranges].start
                     } 
                     bind:to={
-                        appState.tuneOptions.ranges[key as keyof typeof appState.tuneOptions.ranges].end
+                        appState.tuneOptions.tone.ranges[key as keyof typeof appState.tuneOptions.tone.ranges].end
                     }
                 ></FromToNumberInput>
+                <div>
+                    subdivisions: <input type="number">
+                </div>
             </Fieldset>
         {/each}
     </Details>
