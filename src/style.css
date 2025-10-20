@@ -2,7 +2,7 @@
     --b-color-background-primary: #ffffff;
     --b-color-primary: #272727;
     --b-color-secondary: #444444;
-    --b-color-tertiary: #6f6f6f;
+    --b-color-tertiary: #828282;
 
     --b-border-sectional: dashed 1pt var(--b-color-primary);
     --b-border-secondary: solid 1pt var(--b-color-tertiary);
