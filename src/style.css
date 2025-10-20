@@ -87,3 +87,7 @@ fieldset, input {
     border: var(--b-border-secondary);
     border-radius: var(--b-radius-small);
 }
+
+input {
+    background-color: var(--b-color-overlay-background);
+}
