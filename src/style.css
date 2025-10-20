@@ -1,6 +1,6 @@
 :root {
-  --b-color-background-primary: #B6D094;
-  --b-color-primary: #232020;
+  --b-color-background-primary: #ffe78f;
+  --b-color-primary: #2d2d2d;
 
   --b-border-sectional: dashed 1pt var(--b-color-primary);
 
