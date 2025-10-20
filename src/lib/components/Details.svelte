@@ -1,5 +1,5 @@
 <script>
-    let {children, summary = "Details"} = $props()
+    let { children, summary = 'Details' } = $props()
 </script>
 
 <details>
@@ -12,11 +12,23 @@
         border: var(--b-border-secondary);
         border-radius: 4px;
         padding: 0.5em 0.5em 0;
+        transition: all 100ms;
     }
 
     summary {
         margin: -0.5em -0.5em 0;
         padding: 0.5em;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    summary:hover {
+        font-weight: 600;
+    }
+
+    details:not([open]) {
+        height: auto;
+        transition: all;
     }
 
     details[open] {
@@ -27,5 +39,4 @@
         border-bottom: var(--b-border-secondary);
         margin-bottom: 0.5em;
     }
-
 </style>
