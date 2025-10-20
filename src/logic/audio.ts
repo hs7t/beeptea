@@ -105,6 +105,13 @@ export const getFrequencyForMorse = (
     return frequency
 }
 
+export type Block = {
+    frequency: number,
+    beatLength: number
+}
+
+export type Tune = Array<Block>
+
 export const getRandomBlockBeatlength = (bounds: Tools.Range = new Tools.Range(1, 4)) => {
     return bounds.getRandomInteger()
 }
@@ -125,7 +132,7 @@ export const getBlocksForMorse = (
 }
 
 export const playBlocks = () => {
-    
+
 }
 
 export const playMorseTune = async (morseSequence: string) => {
