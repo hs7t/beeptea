@@ -147,6 +147,18 @@ export const playTune = async (tune: Tune) => {
     }
 }
 
+export const tuneToNotation = (tune: Tune) => {
+    let representations = []
+    for (let block of tune) {
+        const note = block.frequency.toString(36) // converts to base36
+        const representation = note.repeat(block.beatLength) // repeats by beatLength
+
+        representations.push(representation)
+    }
+
+    return representations.join(' ') // woohoo
+}
+
 export const playMorseTune = async (morseSequence: string) => {
     let frequencies = []
     for (let signal of morseSequence) {
