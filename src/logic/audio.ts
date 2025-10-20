@@ -192,9 +192,9 @@ export const playMorseTune = async (morseSequence: string) => {
     }
 }
 
-export const downloadMorseTune = async (morseSequence: string) => {
+export const playAndRecord = async (tune: Tune) => {
     recorder.start()
-    await playMorseTune(morseSequence)
+    await playTune(tune)
     const recording = await recorder.stop()
     const recordingURL = URL.createObjectURL(recording)
     const anchor = document.createElement('a')
