@@ -12,9 +12,8 @@
         display: flex;
         align-items: center;
         border-radius: var(--b-radius-small);
-        border: var(--b-border-secondary);
 
-        padding: 0.8rem;
+        padding: 0.2rem;
         background-color: var(--b-color-overlay-background);
     }
 
@@ -24,11 +23,11 @@
     }
 
     .text-visualizer::-webkit-scrollbar {
-        width: 0.2rem;
+        width: 0.6rem;
     }
 
     .text-visualizer::-webkit-scrollbar-track {
-        background: #dcdcdc;
+        background: #e3e3e3;
         border-radius: 10pt;
     }
     
