@@ -7,7 +7,15 @@
 <section class="area controls-area">
     {#each Object.entries(appState.tuneOptions.ranges) as [key, range]}
         <Labeled labelText={key} labeledID={`${key}-range-input`}>
-            <FromToNumberInput id={`${key}-range-input`}></FromToNumberInput>
+            <FromToNumberInput 
+                id={`${key}-range-input`} 
+                bind:from={
+                    appState.tuneOptions.ranges[key as keyof typeof appState.tuneOptions.ranges].start
+                } 
+                bind:to={
+                    appState.tuneOptions.ranges[key as keyof typeof appState.tuneOptions.ranges].end
+                }
+            ></FromToNumberInput>
         </Labeled>
     {/each}
 </section>
