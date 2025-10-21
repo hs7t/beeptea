@@ -57,6 +57,7 @@
         max-width: 100%;
 
         gap: 1em;
+        transition: all 400ms;
     }
 
     footer {
