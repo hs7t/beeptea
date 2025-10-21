@@ -1,4 +1,4 @@
-8# beeptea
+# beeptea
 
 A little tool that turns text into 'tunes', fun audio puzzle versions of morse code.
 The name's beeptea because... I don't know. 
