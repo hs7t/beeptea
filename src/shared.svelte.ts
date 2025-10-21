@@ -16,13 +16,7 @@ export let appState = $state({
     userInput: {
         currentString: 'Hello, world!',
     },
-    get tune(): Tune {
-        return getTuneForMorse(
-            encodeString(appState.userInput.currentString),
-            appState.tuneOptions.tone.ranges,
-            appState.tuneOptions.tone.rangeSubdivisions
-        )
-    },
+    tune: [] as Tune,
     recorder: getRecorder() as Recorder | undefined,
     tuneOptions: {
         tone: {
@@ -40,3 +34,13 @@ export const toggleRecorder = () => {
         appState.recorder = getRecorder()
     }
 }
+
+export let refreshTune = () => {
+    appState.tune = getTuneForMorse(
+        encodeString(appState.userInput.currentString),
+        appState.tuneOptions.tone.ranges,
+        appState.tuneOptions.tone.rangeSubdivisions
+    )
+}
+
+refreshTune()
