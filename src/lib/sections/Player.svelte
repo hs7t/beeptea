@@ -27,7 +27,7 @@
     }
 </script>
 
-<section>
+<section class="area player-area">
     <h2>Play</h2>
 
     <div class="recorder-visualizer">
