@@ -32,11 +32,17 @@
 
     button.primary {
         background-color: var(--b-color-accent-1);
+        color: var(--b-color-accent-1-contrast);
+        border: none;
     }
 
     button:hover {
         background-color: #e1e1e1;
         transition: all 100ms;
+    }
+
+    button.primary:hover {
+        background-color: var(--b-color-accent-2);
     }
 
     button:active {
