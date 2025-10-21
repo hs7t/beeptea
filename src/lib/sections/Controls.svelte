@@ -38,4 +38,9 @@
             </Fieldset>
         {/each}
     </Details>
+    <Details summary="Beat">
+        <Fieldset labelText="lengthBounds">
+            <FromToNumberInput id="lengthBounds-range-input" bind:from={appState.tuneOptions.beat.lengthBounds.start} bind:to={appState.tuneOptions.beat.lengthBounds.end}></FromToNumberInput>
+        </Fieldset>
+    </Details>
 </section>
