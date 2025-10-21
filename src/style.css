@@ -13,6 +13,7 @@
 
     --b-border-sectional: dashed 1pt var(--b-color-primary);
     --b-border-secondary: solid 1pt var(--b-color-tertiary);
+    --b-border-highlight: dashed 1pt var(--b-color-tertiary);
 
     --b-radius-large: 3pt;
     --b-radius-small: 3pt;
@@ -63,6 +64,21 @@ button,
 textarea,
 select {
     font: inherit;
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus,
+details:focus,
+summary:focus {
+    outline: var(--b-border-highlight);
+    outline-offset: 3pt;
+    transition: all 200ms;
+}
+
+details, summary, h1, h2, h3, h4, h5, h6 {
+    user-select: none;
 }
 
 p,
