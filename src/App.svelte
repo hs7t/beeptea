@@ -60,6 +60,15 @@
         transition: all 400ms;
     }
 
+    :global(.player-area) {
+        flex-shrink: 1;
+    }
+
+    :global(.encoding-area) {
+        flex-grow: 2;
+        flex-shrink: 0;
+    }
+
     footer {
         opacity: 80%;
     }
