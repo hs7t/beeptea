@@ -45,7 +45,8 @@ const tune = $derived(
     getTuneForMorse(
         encodeString(appState.userInput.currentString),
         appState.tuneOptions.tone.ranges,
-        appState.tuneOptions.tone.rangeSubdivisions
+        appState.tuneOptions.tone.rangeSubdivisions,
+        appState.tuneOptions.beat.lengthBounds
     )
 )
 
