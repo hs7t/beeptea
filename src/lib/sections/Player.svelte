@@ -25,6 +25,7 @@
 </script>
 
 <section>
+    <h2>Play</h2>
 
     <NotationVisualizer {notation}></NotationVisualizer>
     <div>
