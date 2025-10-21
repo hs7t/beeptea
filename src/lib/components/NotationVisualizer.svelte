@@ -30,6 +30,7 @@
         text-align: center;
         white-space: nowrap;
         transition: all 400ms;
+        user-select: none;
     }
 
     .notation-visualizer .block:hover {
