@@ -1,4 +1,4 @@
-# beeptea
+8# beeptea
 
 A little tool that turns text into 'tunes', fun audio puzzle versions of morse code.
 The name's beeptea because... I don't know. 
@@ -77,7 +77,7 @@ This repo also contains a [workflow for GitHub Pages](./.github/workflows/publis
 
 ### In use
 - [tone.js](https://tonejs.github.io/), a lovely library for browser audio
-- [Svelte](https://svelte.dev/), my love
+- [Svelte](https://svelte.dev/), my beloved
 - [Vite](https://vite.dev/)!
 - [Prettier](https://prettier.io/), for linting
 - [TypeScript](https://www.typescriptlang.org/) - it's my first time using it, and it's really neat!
