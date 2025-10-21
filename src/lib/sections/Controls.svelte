@@ -7,7 +7,7 @@
 
 <section class="area controls-area">
     <h2>Generation settings</h2>
-    <Details summary="Frequency ranges">
+    <Details summary="Frequencies">
         {#each Object.entries(appState.tuneOptions.tone.ranges) as [key, range]}
             <Fieldset labelText={`${key}`}>
                 <FromToNumberInput
@@ -38,7 +38,7 @@
             </Fieldset>
         {/each}
     </Details>
-    <Details summary="Beat">
+    <Details summary="Timing">
         <Fieldset labelText="lengthBounds">
             <FromToNumberInput id="lengthBounds-range-input" bind:from={appState.tuneOptions.beat.lengthBounds.start} bind:to={appState.tuneOptions.beat.lengthBounds.end}></FromToNumberInput>
         </Fieldset>
