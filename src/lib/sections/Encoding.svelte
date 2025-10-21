@@ -8,7 +8,11 @@
     <h2>Encoding</h2>
 
     <div class="input-preview">
-        <input type="text" bind:value={appState.userInput.currentString} id="stringInput">
+        <input
+            type="text"
+            bind:value={appState.userInput.currentString}
+            id="stringInput"
+        />
         <TextVisualizer text={encodeString(appState.userInput.currentString)} />
     </div>
 </section>

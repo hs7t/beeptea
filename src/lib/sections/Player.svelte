@@ -21,10 +21,10 @@
             recordingEnabled = false
         }
     })
-    
+
     const copyNotation = () => {
         navigator.clipboard.writeText(notation)
-    } 
+    }
 </script>
 
 <section>
@@ -33,8 +33,13 @@
     <div class="recorder-visualizer">
         <NotationVisualizer {notation}></NotationVisualizer>
         <div>
-            <Button action={() => playAndRecord(appState.tune, appState.recorder)} primary>Play</Button>
-            <Button action={() => toggleRecorder()}>{recordingEnabled ? 'Disable' : 'Enable'} recorder</Button>
+            <Button
+                action={() => playAndRecord(appState.tune, appState.recorder)}
+                primary>Play</Button
+            >
+            <Button action={() => toggleRecorder()}
+                >{recordingEnabled ? 'Disable' : 'Enable'} recorder</Button
+            >
             <Button action={() => copyNotation()}>Copy notation</Button>
         </div>
     </div>

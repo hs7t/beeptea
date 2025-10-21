@@ -17,7 +17,7 @@
     --b-radius-large: 3pt;
     --b-radius-small: 3pt;
 
-    --b-font-primary: Inter; 
+    --b-font-primary: Inter;
 }
 
 *,
@@ -89,8 +89,8 @@ h6 {
     isolation: isolate;
 }
 
-
-fieldset, input {
+fieldset,
+input {
     border: var(--b-border-secondary);
     border-radius: var(--b-radius-small);
 }

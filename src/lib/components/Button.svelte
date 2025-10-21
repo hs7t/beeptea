@@ -5,7 +5,7 @@
         disabled = $bindable(false),
         id = 'button-r',
         primary = false,
-        style=""
+        style = '',
     } = $props()
 </script>
 
@@ -14,7 +14,7 @@
     {disabled}
     {id}
     class={primary ? 'primary' : 'secondary'}
-    style={style}
+    {style}
 >
     {@render children?.()}
 </button>
