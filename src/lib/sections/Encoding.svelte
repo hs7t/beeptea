@@ -1,6 +1,11 @@
 <script lang="ts">
     import { encodeString } from '../../logic/morse'
-    import { appState } from '../../shared.svelte'
+    import { appState, refreshTune } from '../../shared.svelte'
+
+    $effect(() => {
+        appState.tune 
+        refreshTune()
+    })
 </script>
 
 <section class="area encoding-area">
