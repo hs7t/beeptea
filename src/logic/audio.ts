@@ -114,8 +114,10 @@ export type Block = {
 
 export type Tune = Array<Block>
 
+export const defaultBlockBeatLengthBounds = new Tools.Range(1, 4)
+
 export const getRandomBlockBeatlength = (
-    bounds: Tools.Range = new Tools.Range(1, 4)
+    bounds: Tools.Range = defaultBlockBeatLengthBounds
 ) => {
     return bounds.getRandomInteger()
 }
@@ -124,7 +126,7 @@ export const getTuneForMorse = (
     morseSequence: string,
     ranges: MorseFrequencyRanges = defaultMorseRanges,
     rangeSubdivisions: MorseFrequencyRangeSubdivisions = defaultMorseFrequencyRangeSubdivisions,
-    beatLengthBounds: Tools.Range = new Tools.Range(1, 4)
+    beatLengthBounds: Tools.Range = defaultBlockBeatLengthBounds
 ) => {
     let tune: Tune = []
     for (let signal of morseSequence) {
