@@ -25,6 +25,8 @@
     }
 
     :global(section) {
+        background-color: var(--b-color-section-background);
+        
         display: flex;
         flex-direction: column;
 
