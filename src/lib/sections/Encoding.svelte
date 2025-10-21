@@ -1,6 +1,6 @@
 <script lang="ts">
     import { encodeString } from '../../logic/morse'
-    import { appState, refreshTune } from '../../shared.svelte'
+    import { appState } from '../../shared.svelte'
 
     import TextVisualizer from '../components/TextVisualizer.svelte'
 </script>
