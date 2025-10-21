@@ -18,7 +18,8 @@
         margin: auto;
 
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
 
         gap: 1rem;
     }
@@ -29,7 +30,10 @@
 
         border: var(--b-border-sectional);
         border-radius: var(--b-radius-large);
+        
         padding: 1rem;
+        flex-grow: 1;
+        max-width: 100%;
 
         gap: 1em;
     }
