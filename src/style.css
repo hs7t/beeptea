@@ -97,4 +97,6 @@ input {
 
 input {
     background-color: var(--b-color-overlay-background);
+    padding: 0.6ch;
+    text-box-edge: text alphabetic;
 }
