@@ -2,10 +2,6 @@
     import { encodeString } from '../../logic/morse'
     import { appState, refreshTune } from '../../shared.svelte'
 
-    $effect(() => {
-        appState.tune
-        refreshTune()
-    })
     import TextVisualizer from '../components/TextVisualizer.svelte'
 </script>
 
