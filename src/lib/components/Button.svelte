@@ -21,15 +21,15 @@
 
 <style>
     button {
+        display: inline-flex;
+
         background-color: var(--b-color-overlay-background);
         border: var(--b-border-secondary);
         border-radius: var(--b-radius-small);
-
         padding: 0.6ch;
-
         transition: all;
 
-        display: inline-flex;
+        user-select: none;
     }
 
     button.primary {
