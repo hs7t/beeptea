@@ -35,7 +35,7 @@ You can't decode a tune using just the notation, but notation is really useful f
 ## What this website does
 
 
-This website lets you create rudimentary, random-ish tunes by
+beeptea lets you create rudimentary, random-ish tunes by
 
 1. Converting your text into morse code
 2. Letting you assign frequency ranges for different signals and the increments by which those signals can be assigned
@@ -44,6 +44,7 @@ This website lets you create rudimentary, random-ish tunes by
 
 In short, it's a simple implementation of a tune puzzle generator!
 
+[Visit it here!](https://beeptea.hvii.cc/)
 
 ## Running beeptea yourself
 
