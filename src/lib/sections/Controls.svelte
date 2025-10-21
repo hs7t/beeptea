@@ -24,8 +24,9 @@
                     }
                 ></FromToNumberInput>
                 <div>
-                    subdivisions:
+                    <label for={key + "subdivision-input"}>divide by:</label>
                     <input
+                        id={key + "subdivision-input"}
                         type="number"
                         bind:value={
                             appState.tuneOptions.tone.rangeSubdivisions[
