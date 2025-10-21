@@ -1,12 +1,12 @@
 :root {
-    --b-color-background-primary: #eff2f6;
+    --b-color-background-primary: #e7ffe5;
     --b-color-section-background: #ffffff;
     --b-color-overlay-background: #f7f7f7;
     --b-color-primary: #272727;
     --b-color-secondary: #5a5a5a;
-    --b-color-tertiary: #d6d6d6;
+    --b-color-tertiary: #e3f5f2;
 
-    --b-color-accent-1: #d42e00;
+    --b-color-accent-1: #d40000;
     --b-color-accent-1-contrast: #f6f6f6;
     --b-color-accent-2: #ffab2e;
     --b-color-accent-2-contrast: #1c1c1c;
