@@ -211,7 +211,7 @@ export const playAndRecord = async (
         const recordingURL = URL.createObjectURL(recording)
         const anchor = document.createElement('a')
 
-        anchor.download = 'recording.webm'
+        anchor.download = 'tune.webm'
         anchor.href = recordingURL
         anchor.click()
 
