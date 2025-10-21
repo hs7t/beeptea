@@ -33,6 +33,7 @@
     }
 
     button.primary {
+        font-weight: 600;
         background-color: var(--b-color-accent-1);
         color: var(--b-color-accent-1-contrast);
         border: none;
