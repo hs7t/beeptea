@@ -5,6 +5,7 @@ import type {
     Tune,
 } from './logic/audio'
 import {
+    defaultBlockBeatLengthBounds,
     defaultMorseFrequencyRangeSubdivisions,
     defaultMorseRanges,
     getRecorder,
@@ -25,6 +26,9 @@ export let appState = $state({
             ranges: defaultMorseRanges as MorseFrequencyRanges,
             rangeSubdivisions:
                 defaultMorseFrequencyRangeSubdivisions as MorseFrequencyRangeSubdivisions,
+        },
+        beat: {
+            lengthBounds: defaultBlockBeatLengthBounds,
         },
     },
 })
