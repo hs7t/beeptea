@@ -5,6 +5,7 @@
         disabled = $bindable(false),
         id = 'button-r',
         primary = false,
+        style=""
     } = $props()
 </script>
 
@@ -13,6 +14,7 @@
     {disabled}
     {id}
     class={primary ? 'primary' : 'secondary'}
+    style={style}
 >
     {@render children?.()}
 </button>
@@ -26,6 +28,10 @@
         transition: all;
 
         display: inline-flex;
+    }
+
+    button.primary {
+        background-color: var(--b-color-accent-1);
     }
 
     button:hover {
