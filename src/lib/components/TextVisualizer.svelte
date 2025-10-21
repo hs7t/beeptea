@@ -11,6 +11,7 @@
         overflow-x: scroll;
         display: flex;
         align-items: center;
+        justify-content: center;
         border-radius: var(--b-radius-small);
 
         padding: 0.2rem;
