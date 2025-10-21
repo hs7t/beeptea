@@ -44,6 +44,34 @@ This website lets you create rudimentary, random-ish tunes by
 
 In short, it's a simple implementation of a tune puzzle generator!
 
+
+## Running beeptea yourself
+
+This project uses Svelte and Vite, with no extra backend. (Although I was really tempted to use one... oh Python... how much I miss thee...)
+
+Install all dependencies:
+
+```bash
+npm install
+```
+
+Then start a local development server:
+
+```bash
+npm run dev
+```
+
+Or try:
+
+```bash
+npm run build
+```
+
+...to get a built version at `/dist` - you can deploy it anywhere!
+
+This repo also contains a [workflow for GitHub Pages](./.github/workflows/publish.yaml), if that helps.
+
+
 ## Credits
 
 ### In use
