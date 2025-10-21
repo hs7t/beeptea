@@ -3,7 +3,6 @@
     import { appState, toggleRecorder } from '../../shared.svelte'
     import Button from '../components/Button.svelte'
     import NotationVisualizer from '../components/NotationVisualizer.svelte'
-    import TextVisualizer from '../components/TextVisualizer.svelte'
 
     let notation = $derived(
         tuneMorseToNotation(
@@ -22,6 +21,10 @@
             recordingEnabled = false
         }
     })
+    
+    const copyNotation = () => {
+        navigator.clipboard.writeText(notation)
+    } 
 </script>
 
 <section>
@@ -32,6 +35,7 @@
         <div>
             <Button action={() => playAndRecord(appState.tune, appState.recorder)} primary>Play</Button>
             <Button action={() => toggleRecorder()}>{recordingEnabled ? 'Disable' : 'Enable'} recorder</Button>
+            <Button action={() => copyNotation()}>Copy notation</Button>
         </div>
     </div>
 </section>
