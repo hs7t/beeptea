@@ -54,6 +54,7 @@
 
         padding: 1rem;
         flex-grow: 1;
+        align-self: flex-start;
         max-width: 100%;
 
         gap: 1em;
@@ -61,12 +62,12 @@
     }
 
     :global(.player-area) {
-        flex-shrink: 1;
+        flex-shrink: 0;
     }
 
     :global(.encoding-area) {
-        flex-grow: 2;
-        flex-shrink: 0;
+        flex-grow: 1;
+        flex-shrink: 2;
     }
 
     footer {
