@@ -7,5 +7,5 @@
     <input id={id + "from"} type="number" bind:value={from} max={to} />
 
     <label for={id + "to"}>to</label>
-    <input id={id + "from"} type="number" bind:value={to} min={from} />
+    <input id={id + "to"} type="number" bind:value={to} min={from} />
 </div>
