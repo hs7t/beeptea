@@ -6,7 +6,7 @@
 </script>
 
 <section class="area controls-area">
-    <h2>Options</h2>
+    <h2>Generation settings</h2>
     <Details summary="Frequency ranges">
         {#each Object.entries(appState.tuneOptions.tone.ranges) as [key, range]}
             <Fieldset labelText={`${key}`}>
