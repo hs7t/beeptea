@@ -11,6 +11,15 @@
 </main>
 
 <footer>
+    <p>
+        beeptea by <a href="https://hvii.cc/">Ali</a>!
+    </p>
+    <p>
+        A tune puzzle generator. (<a href="https://github.com/hs7t/beeptea#whats-a-tune">What's a tune?</a>) (<a href="https://github.com/hs7t/beeptea#what-this-website-does">What does this website do?</a>)
+    </p>
+    <p>
+        Source available under the MIT licence on <a href="https://github.com/hs7t/beeptea/">GitHub</a>.
+    </p>
 </footer>
 
 <style>
