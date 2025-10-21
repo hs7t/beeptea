@@ -10,13 +10,23 @@
     <Player />
 </main>
 
+<footer>
+</footer>
+
 <style>
-    main {
+    :global(#app) {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
         width: 80dvw;
         padding-top: 10dvh;
         padding-bottom: 10dvh;
         margin: auto;
+    }
 
+    main {
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -38,5 +48,9 @@
         max-width: 100%;
 
         gap: 1em;
+    }
+
+    footer {
+        opacity: 80%;
     }
 </style>
