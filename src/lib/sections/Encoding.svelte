@@ -3,20 +3,33 @@
     import { appState, refreshTune } from '../../shared.svelte'
 
     $effect(() => {
-        appState.tune 
+        appState.tune
         refreshTune()
     })
+    import TextVisualizer from '../components/TextVisualizer.svelte'
 </script>
 
 <section class="area encoding-area">
-    <input type="text" bind:value={appState.userInput.currentString} id="stringInput">
-    <div>
-        <p>{encodeString(appState.userInput.currentString)}</p>
+    <h2>Encoding</h2>
+
+    <div class="input-preview">
+        <input
+            type="text"
+            bind:value={appState.userInput.currentString}
+            id="stringInput"
+        />
+        <TextVisualizer text={encodeString(appState.userInput.currentString)} />
     </div>
 </section>
 
 <style>
     #stringInput {
         width: 100%;
+    }
+
+    .input-preview {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
     }
 </style>

@@ -3,6 +3,9 @@
 </script>
 
 <div {id}>
-    from <input type="number" bind:value={from} max={to}>
-    to <input type="number" bind:value={to} min={from}>
+    <label for={id + "from"}>from</label>
+    <input id={id + "from"} type="number" bind:value={from} max={to} />
+
+    <label for={id + "to"}>to</label>
+    <input id={id + "from"} type="number" bind:value={to} min={from} />
 </div>

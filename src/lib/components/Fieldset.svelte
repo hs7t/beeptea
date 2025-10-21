@@ -3,7 +3,7 @@
 </script>
 
 <fieldset>
-    <legend >{labelText}</legend>
+    <legend>{labelText}</legend>
     {@render children?.()}
 </fieldset>
 
