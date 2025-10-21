@@ -36,6 +36,10 @@
     }
 }
 
+body, html {
+    scrollbar-gutter: stable both-edges;
+}
+
 body {
     color: var(--b-color-primary);
     background-color: var(--b-color-background-primary);
